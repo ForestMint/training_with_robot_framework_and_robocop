@@ -15,4 +15,14 @@ Vagrant.configure("2") do |config|
     vb.cpus = 2
   end
 
+
+
+
+  config.vm.provision "shell", inline: <<-SHELL
+    echo "This runs during provisioning"
+    sudo curl -L "https://raw.githubusercontent.com/ForestMint/training_with_robot_framework_and_robocop/refs/heads/master/example.robot" -o ./my_project/example.robot
+  SHELL
+
+
+
 end
