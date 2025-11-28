@@ -4,10 +4,31 @@ This project is about training with Robot Framework for [acceptance testing](htt
 
 ## Process
 
-### Step 1 - Make Python virtual environment from requirements.txt
+### Step 1 - Create and set up the VM
 
 ```bash
-python -m venv robotenv
+vagrant up
+```
+
+connect to the VM (user : vagrant, password : vagrant)
+
+
+In the VM, run the following (as user vagrant) :
+```bash
+python3 --version # check the version of Python, it should be 3.10.12
+
+sudo apt update
+
+sudo apt install python3.10-venv
+```
+
+
+
+
+### Step 2 - Make Python virtual environment from requirements.txt
+
+```bash
+python3 -m venv robotenv
 ```
 
 ```bash
@@ -15,7 +36,18 @@ source robotenv/bin/activate
 ```
 
 ```bash
+touch requirements.txt
+```
+
+Edit requirements.txt add the content of the file in this repository
+
+```bash
 pip install -r requirements.txt
+```
+
+List the dependancies in the current venv to check that robotframework is actually included
+```bash
+pip list
 ```
 
 ```bash
