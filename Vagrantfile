@@ -10,19 +10,27 @@ Vagrant.configure("2") do |config|
 
   # VM settings
   config.vm.provider "virtualbox" do |vb|
-    vb.name = "robotVM"
+    #vb.name = "robotVM"
     vb.memory = "2048"
     vb.cpus = 2
   end
 
-
-
-
+  # Provision with a shell script
   config.vm.provision "shell", inline: <<-SHELL
-    echo "This runs during provisioning"
-    sudo curl -L "https://raw.githubusercontent.com/ForestMint/training_with_robot_framework_and_robocop/refs/heads/master/example.robot" -o ./my_project/example.robot
+    #!/bin/bash
+    echo "Updating and installing some packages..."
+
+    # Update package lists
+    sudo apt-get update -y
+
+    # Install some basic packages
+    sudo apt-get install -y curl git vim
+
+    # Create a test file
+    echo "Hello, Vagrant!" > /home/vagrant/hello.txt
+
+    # Print a message
+    echo "Bash script completed!" 
   SHELL
-
-
 
 end

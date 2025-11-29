@@ -19,7 +19,7 @@ python3 --version # check the version of Python, it should be 3.10.12
 
 sudo apt update
 
-sudo apt install python3.10-venv
+sudo apt install python3.10-venv # install venv package
 
 sudo curl -L "https://raw.githubusercontent.com/ForestMint/training_with_robot_framework_and_robocop/refs/heads/master/example.robot" -o example.robot
 
