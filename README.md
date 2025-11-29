@@ -7,50 +7,51 @@ This project is about training with Robot Framework for [acceptance testing](htt
 ### Step 1 - Create and set up the VM
 
 ```bash
-vagrant up
+vagrant up # create and start the VM from Vagrantfile
 ```
 
-connect to the VM (user : vagrant, password : vagrant)
 
+connect to the VM ($ vagrant ssh)
 
 In the VM, run the following (as user vagrant) :
+
 ```bash
-python3 --version # check the version of Python, it should be 3.10.12
-
 sudo apt update
-
-sudo apt install python3.10-venv # install venv package
-
-sudo curl -L "https://raw.githubusercontent.com/ForestMint/training_with_robot_framework_and_robocop/refs/heads/master/example.robot" -o /home/vagrant/example.robot
-
 ```
 
-
+```bash
+yes Y | sudo apt install python3.10-venv # install venv package
+# choose to restart networkd-dispatcher.service
+```
 
 
 ### Step 2 - Make Python virtual environment from requirements.txt
 
+connect to the VM ($ vagrant ssh)
+
+In the VM, run the following (as user vagrant) :
+
 ```bash
-python3 -m venv robotenv
+python3 -m venv robotenv # create a virtual environment called robotenv
 ```
 
 ```bash
-source robotenv/bin/activate
+source robotenv/bin/activate # activate the virtual environment called "robotenv"
+# should not display "(robotenv)" before your user@host in terminal
 ```
 
 ```bash
-touch requirements.txt
-```
-
-Edit requirements.txt add the content of the file in this repository
-
-```bash
-pip install -r requirements.txt
+pip install -r requirements.txt # install the dependancies listed in requirements.txt in the currently activated virtual environment
 ```
 
 List the dependancies in the current venv to check that robotframework is actually included
 ```bash
 pip list
+```
+
+Run the Robot Framework tests contained in the file called "example.robot"
+```bash
+robot example.robot
 ```
 
 ```bash

@@ -18,13 +18,13 @@ Vagrant.configure("2") do |config|
   # Provision with a shell script
   config.vm.provision "shell", inline: <<-SHELL
     #!/bin/bash
-    echo "Updating and installing some packages..."
+    echo "Provisioning the VM..."
 
     # Update package lists
-    sudo apt-get update -y
+    #sudo apt-get update -y
 
     # Install some basic packages
-    sudo apt-get install -y curl git vim
+    #sudo apt-get install -y curl git vim
 
     sudo apt update
 
