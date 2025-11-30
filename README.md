@@ -20,7 +20,6 @@ have [RobotCode - Robot FrameWork Support](https://open-vsx.org/extension/d-bieh
 vagrant up # create and start the VM from Vagrantfile
 ```
 
-
 connect to the VM ($ vagrant ssh)
 
 In the VM, run the following (as user vagrant) :
@@ -30,11 +29,9 @@ sudo apt update
 ```
 
 ```bash
-yes Y | sudo apt install python3.10-venv # install venv package
-# choose to restart networkd-dispatcher.service
+sudo NEEDRESTART_MODE=a apt install -y python3.10-venv # install venv package
+# 'NEEDRESTART_MODE=a' sets it to 'automatic' so no prompts will be done, it is the cleanest and recommended method
 ```
-It freezes and it seems that is is required to close the terminal ans open a new one after having run this command
-
 
 ### Step 2 - Make Python virtual environment from requirements.txt
 
@@ -48,7 +45,7 @@ python3 -m venv robotenv # create a virtual environment called robotenv
 
 ```bash
 source robotenv/bin/activate # activate the virtual environment called "robotenv"
-# should not display "(robotenv)" before your user@host in terminal
+# should display "(robotenv)" before your user@host in terminal
 ```
 
 ```bash
@@ -65,6 +62,8 @@ Run the Robot Framework tests contained in the file called "example.robot"
 robot example.robot
 ```
 
+Deactivate the virtual environment
 ```bash
 deactivate
+# should stop displaying "(robotenv)" before your user@host in terminal
 ```
