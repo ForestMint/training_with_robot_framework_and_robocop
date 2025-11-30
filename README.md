@@ -52,9 +52,14 @@ source robotenv/bin/activate # activate the virtual environment called "robotenv
 pip install -r requirements.txt # install the dependancies listed in requirements.txt in the currently activated virtual environment
 ```
 
-List the dependancies in the current venv to check that robotframework is actually included
+List the dependancies in the current venv to check that robotframework and robotframework-robocop are actually included
 ```bash
 pip list
+```
+
+Lint the .robot test files with Robocop
+```bash
+robocop check
 ```
 
 Run the Robot Framework tests contained in the file called "example.robot"

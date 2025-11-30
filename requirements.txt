@@ -1,1 +1,2 @@
 robotframework==7.3.2
+robotframework-robocop==6.13.0
