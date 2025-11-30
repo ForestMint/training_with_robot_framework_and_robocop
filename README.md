@@ -2,6 +2,16 @@
 
 This project is about training with Robot Framework for [acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) and Robocop for linting .robot files
 
+## Prerequisites
+
+### Requirements
+
+### Comfort
+
+have [RobotCode - Robot FrameWork Support](https://open-vsx.org/extension/d-biehl/robotcode) installed is your VSCode :
+    - it will color your .robot files to make them easier to read
+    - it will add the little Robot Framework logo as file symbol for your .robot files
+
 ## Process
 
 ### Step 1 - Create and set up the VM
@@ -23,6 +33,7 @@ sudo apt update
 yes Y | sudo apt install python3.10-venv # install venv package
 # choose to restart networkd-dispatcher.service
 ```
+It freezes and it seems that is is required to close the terminal ans open a new one after having run this command
 
 
 ### Step 2 - Make Python virtual environment from requirements.txt
