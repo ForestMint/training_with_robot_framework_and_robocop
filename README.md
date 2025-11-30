@@ -1,6 +1,9 @@
 # Training with Robot Framework and Robocop
 
-This project is about training with Robot Framework for [acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) and Robocop for linting .robot files
+This project is about training with Robot Framework for [acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) 
+
+It uses [Robocop](https://robocop.dev/stable/) for linting .robot files
+It uses [Selenium](https://en.wikipedia.org/wiki/Selenium_(software)) for browser autoamted testing through library [Selenium Library](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html)
 
 ## Prerequisites
 
